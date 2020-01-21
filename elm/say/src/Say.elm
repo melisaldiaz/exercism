@@ -153,8 +153,7 @@ units list =
 -- second element is a tuple of a written number and its numeric value, it
 -- returns a reversed list of the written number plus its large number name
 --according to its index.
--- Example: (4, ("one hundred and ten",110)) -> ["billion","one hundred and ten"]
-
+-- Example: (3, ("one hundred and ten",110)) -> ["billion","one hundred and ten"]
 
 largeNumbers : ( Int, ( String, Int ) ) -> List String
 largeNumbers x =
