@@ -1,3 +1,5 @@
 **/.exercism/*
 **/elm-stuff/*
 **/node_modules/*
+**/.vscode/*
+**/dist-newstyle/*
