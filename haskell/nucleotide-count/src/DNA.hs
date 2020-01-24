@@ -35,7 +35,4 @@ toNucleotide =
     _ -> Nothing
 
 updateCount :: Map Nucleotide Int -> Nucleotide -> Map Nucleotide Int
-updateCount mni n = Map.update f n mni
-  where
-    f :: Int -> Maybe Int
-    f = \x -> Just (x + 1)
+updateCount mni n = Map.adjust (+1) n mni
