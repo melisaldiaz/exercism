@@ -17,7 +17,9 @@ abbreviate =
   T.strip .
   T.pack .
   filter (not . isPunctuation) .
-  splitBy isUpper . removeConsecutive isUpper . replace '-' ' '
+  splitBy isUpper . 
+  removeConsecutive isUpper . 
+  replace '-' ' '
 
 -- | Create an abbreviation from a list of words
 abbr :: [Text] -> Text
