@@ -2,18 +2,17 @@ module ArmstrongNumbers
   ( armstrong
   ) where
 
-import           Data.Foldable (length)
+import           Numeric.Natural (Natural)
 
 armstrong :: Integral a => a -> Bool
-armstrong a =
-  let x :: Integer
-      x = (fromIntegral a)
-      
-      digits :: [Integer]
-      digits = toDigits x
-   in x == sum (fmap (\n -> n ^ length digits) digits)
+armstrong a
+  | a < 0 = False
+  | otherwise =
+    let digits :: [Natural]
+        digits = toDigits (fromIntegral a)
+     in fromIntegral a == sum (fmap (\n -> n ^ length digits) digits)
 
-toDigits :: Integer -> [Integer]
+toDigits :: Natural -> [Natural]
 toDigits n
-  | n < 10 = [n]
+  | n >= 0 && n < 10 = [n]
   | otherwise = toDigits (div n 10) ++ [mod n 10]
