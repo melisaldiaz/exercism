@@ -6,6 +6,8 @@ module Clock
   , toString
   ) where
 
+import           Control.Applicative
+
 data Clock =
   Clock Int
         Int
@@ -19,9 +21,7 @@ fromHourMin hour min' = uncurry Clock (wrapHM hour min')
 -- Shows a Clock as a String with the format "hh:mm".
 toString :: Clock -> String
 toString (Clock h m) =
-  case (showH h, showM m) of
-    (Just a, Just b) -> a ++ ":" ++ b
-    _                -> ""
+  maybe "" id (liftA2 (\a b -> a ++ ":" ++ b) (showH h) (showM m))
 
 -- Adds a duration, expressed in hours and minutes, to a
 -- given time, represented by an instance of Clock.
