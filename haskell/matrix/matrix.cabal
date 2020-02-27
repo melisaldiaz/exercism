@@ -1,0 +1,43 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 4b39626310bdc296f784710891f6b1ce3cd6ee766aff696bb3dc8b081dd46ee1
+
+name:           matrix
+version:        1.3.0.9
+build-type:     Simple
+
+library
+  exposed-modules:
+      Matrix
+  other-modules:
+      Paths_matrix
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      attoparsec
+    , base
+    , text
+    , vector
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Tests.hs
+  other-modules:
+      Paths_matrix
+  hs-source-dirs:
+      test
+  build-depends:
+      QuickCheck
+    , attoparsec
+    , base
+    , hspec
+    , matrix
+    , text
+    , vector
+  default-language: Haskell2010
