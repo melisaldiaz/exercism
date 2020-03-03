@@ -1,0 +1,40 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 26dcdc5680a386ba272de92a1dc4a776458a224b36f5b6fb991a00a2ab12dcbb
+
+name:           house
+version:        0.1.0.3
+build-type:     Simple
+
+library
+  exposed-modules:
+      House
+  other-modules:
+      Paths_house
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      attoparsec
+    , base
+    , text
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Tests.hs
+  other-modules:
+      Paths_house
+  hs-source-dirs:
+      test
+  build-depends:
+      attoparsec
+    , base
+    , house
+    , hspec
+    , text
+  default-language: Haskell2010
