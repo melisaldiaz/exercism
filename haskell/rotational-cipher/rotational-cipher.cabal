@@ -1,0 +1,36 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 8dff5bd69f67510dd9b10d7ae7f36e0034307fc5050d94323f3ed5fde7aa55c8
+
+name:           rotational-cipher
+version:        1.2.0.4
+build-type:     Simple
+
+library
+  exposed-modules:
+      RotationalCipher
+  other-modules:
+      Paths_rotational_cipher
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      base
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Tests.hs
+  other-modules:
+      Paths_rotational_cipher
+  hs-source-dirs:
+      test
+  build-depends:
+      base
+    , hspec
+    , rotational-cipher
+  default-language: Haskell2010
