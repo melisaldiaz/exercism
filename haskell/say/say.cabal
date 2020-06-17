@@ -1,0 +1,38 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 5adc7426bee5ad798cc2e1fafac2724d5821e6369edbf7a7b10906e82aff269a
+
+name:           say
+version:        1.2.0.6
+build-type:     Simple
+
+library
+  exposed-modules:
+      Say
+  other-modules:
+      Paths_say
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      base
+    , containers
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Tests.hs
+  other-modules:
+      Paths_say
+  hs-source-dirs:
+      test
+  build-depends:
+      base
+    , containers
+    , hspec
+    , say
+  default-language: Haskell2010
