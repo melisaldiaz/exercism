@@ -1,15 +1,14 @@
 class Transcriptor {
     toRna(strand: string): string {
         const input: string[] = strand.split('');
-        let result: string[] = [];
 
         if (any(nonNucleotide, input)) { throw new Error('Invalid input DNA.') }
 
         else {
             for (let i = 0; i < input.length; i++) {
-                result.push(toRNAnuc(input[i]))
+                input[i] = toRNAnuc(input[i]);
             }
-        } return result.join('');
+        } return input.join('');
     }
 }
 
